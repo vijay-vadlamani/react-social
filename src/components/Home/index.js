@@ -8,7 +8,7 @@ const Promise = global.Promise;
 
 const mapStateToProps = state => {
 	return {
-		appName: state.appName
+		appName: state.common.appName
 	}
 }
 
