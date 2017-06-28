@@ -7,6 +7,7 @@ const promiseMiddleware = store => next => action => {
    * We are going to check if action.payload is a promise
    */
   if (isPromise(action.payload)) {
+    store.dispatch({ type: 'ASYNC_START', subtype: action.type });
     action.payload.then(
       res => {
         // After the promise is resolved we are going to dispatch the action after overriding
